@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Brian Ye</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --bg:#fff; --text:#111; --muted:#6c757d; }
+    body { background:var(--bg); color:var(--text); font-family:Inter,system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; }
+    .container { max-width:1100px; }
+    .hero { padding:28px 16px; text-align:center; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:18px; }
+    .card-thumb { border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(2,6,23,0.08); height: 220px; object-fit:cover; width:100%; display:block; }
+    .project-card { background:#fff; border-radius:10px; padding:0; overflow:hidden; transition:transform .18s, box-shadow .18s; position:relative; text-decoration:none; color:inherit; }
+    .project-card:hover { transform:translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.12); }
+    .card-body { padding:14px 16px; }
+    .meta { color:var(--muted); font-size:0.92rem; margin-bottom:8px; }
+    .footer { background:#0b0c0d; color:#cbd5e1; padding:14px 0; text-align:center; margin-top:36px; }
+    .badge { font-size:0.78rem; }
+    @media (min-width: 1200px) { .container { max-width:1150px; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Brian Ye</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="hero">
+    <h1 class="mb-1">Projects</h1>
+    <p class="lead mb-0">Selected research & projects — click any tile to view the full project page and paper.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- Project card: Peristaltic -->
+      <a class="project-card" href="projects/peristaltic.html" title="Peristaltic Actuator — details">
+        <img src="images/figure1_peristaltic.png" alt="Peristaltic figure 1" class="card-thumb">
+        <div class="card-body">
+          <h5 class="mb-1">Peristaltic Soft Robotic Actuator</h5>
+          <div class="meta"><span class="badge bg-secondary">RAL 2025</span> • Bio-inspired pneumatic modular actuator for object transport</div>
+          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Modular donut-shaped modules (compression + longitudinal) with pressure-feedback synchronization for stacked peristaltic transport.</p>
+        </div>
+      </a>
+
+      <!-- Project card: TripodBot -->
+      <a class="project-card" href="projects/tripodbot.html" title="TripodBot — details">
+        <img src="images/figure1_tripodbot.png" alt="TripodBot figure 1" class="card-thumb">
+        <div class="card-body">
+          <h5 class="mb-1">TripodBot — CCPJ Soft Robot</h5>
+          <div class="meta"><span class="badge bg-secondary">ISRR 2024</span> • Self-deployable, adaptive soft robot</div>
+          <p style="margin:0; color:var(--muted); font-size:0.95rem;">Contracting-Cord Particle Jamming (CCPJ) enables self-deployment, stiffness tuning, and slip-stick locomotion in confined environments.</p>
+        </div>
+      </a>
+
+      <!-- (If you add more projects, duplicate the block above and change href/image/text) -->
+    </div>
+
+    <hr style="margin:28px 0; border-color:#eee;">
+
+    <p style="color:#6c757d;">Want more tiles? Add another project card block (image + link) in this grid. For each new project add a detail page under <code>projects/</code>.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  &copy; 2025 Brian Ye · <a href="index.html" style="color:#dbeafe; text-decoration:underline">Home</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
