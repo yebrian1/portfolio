@@ -26,16 +26,21 @@
     .navbar {
       background: var(--tan) !important;
       transition: background .25s;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
     }
     .navbar .nav-link { color: #000 !important; }
     .navbar .navbar-brand { color: #000 !important; }
 
-    /* HERO */
+    /* HERO - force white background explicitly */
     .hero {
       padding: 56px 16px;
       text-align: center;
-      background: #ffffff;
+      background: #ffffff !important; /* IMPORTANT: explicit white */
+      margin-top: 0;
     }
+    /* ensure there's no accidental top margin from navbar collapse */
+    .navbar + .hero { margin-top: 0; }
+
     .hero img {
       width: 160px;
       height: 160px;
@@ -92,7 +97,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (explicit white) -->
 <section class="hero fade-in" id="top-hero">
   <img src="images/profile.png" alt="Brian Ye — profile photo">
   <h1 class="mt-3">Brian Ye</h1>
