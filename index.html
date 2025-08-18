@@ -32,6 +32,7 @@
     .navbar .navbar-brand { color: #000 !important; }
 
     /* HERO - force white background explicitly */
+    
     .hero {
       padding: 56px 16px;
       text-align: center;
@@ -45,11 +46,11 @@
       width: 160px;
       height: 160px;
       object-fit: cover;
-      border-radius: 0%;
-      /* box-shadow removed per request */
-      box-shadow: none;
+      border-radius: 50%;   /* ✅ circle */
+      box-shadow: none;     /* still no shadow */
       transition: transform .25s;
     }
+
     .hero img:hover { transform: scale(1.03); }
 
     .subtitle { color: var(--muted); margin-bottom: 14px; }
@@ -188,6 +189,7 @@
 </script>
 </body>
 </html>
+
 
 
 
