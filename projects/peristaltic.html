@@ -15,20 +15,28 @@
     }
 
     body { 
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; 
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
       margin: 0; 
       background: var(--bg); 
       color: var(--text); 
     }
 
-    /* NAVBAR: Matched exactly to index.html */
+    /* NAVBAR: Exact Match to index.html styling */
     .navbar {
       background: var(--tan) !important;
       transition: background .25s;
       border-bottom: 1px solid rgba(0,0,0,0.04);
+      padding-top: 0.5rem;    /* Standard Bootstrap height */
+      padding-bottom: 0.5rem;
     }
-    .navbar .nav-link { color: #000 !important; }
-    .navbar .navbar-brand { color: #000 !important; }
+    .navbar .nav-link { 
+      color: #000 !important; 
+      font-weight: 400; /* Resetting to standard weight */
+    }
+    .navbar .navbar-brand { 
+      color: #000 !important; 
+      font-weight: 700; /* Bold as per index */
+    }
 
     /* Layout Styles */
     .container { max-width: 1000px; padding: 28px 16px; }
@@ -55,20 +63,6 @@
     .section { margin-top: 48px; }
     .figure { width: 100%; height: auto; border-radius: 6px; }
     .aside { background: #f8f9fa; padding: 20px; border-radius: 12px; height: 100%; }
-    
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-      background: #0b0c0d;
-      padding: 24px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-    .screenshot-grid img {
-      width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; transition: transform 0.2s;
-    }
-    .screenshot-grid img:hover { transform: scale(1.05); }
 
     .footer { background: #0b0c0d; color: #cbd5e1; padding: 20px 0; text-align: center; margin-top: 60px; }
   </style>
@@ -132,16 +126,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h3>Visual Documentation</h3>
-    <div class="screenshot-grid">
-      <img src="../images/gallery1.png" alt="Fabrication Step">
-      <img src="../images/gallery2.png" alt="Simulation Data">
-      <img src="../images/gallery3.png" alt="Lab Test Setup">
-      <img src="../images/gallery4.png" alt="Pressure Analysis">
     </div>
   </div>
 
