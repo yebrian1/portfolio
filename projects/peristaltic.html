@@ -18,11 +18,17 @@
   footer{ background:#0b0c0d; color:#cbd5e1; padding:14px 0; text-align:center; margin-top:36px; }
   iframe.video { width:100%; height:360px; border-radius:8px; border:0; box-shadow:0 8px 24px rgba(2,6,23,0.08); }
   .tech-list li{ margin-bottom:6px; }
+  
+  /* Unified Navbar style from index */
+  .navbar {
+    background: #f9fafb !important;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
 </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="../index.html">Brian Ye</a>
     <div class="collapse navbar-collapse" id="navmenu">
@@ -40,13 +46,13 @@
     <div style="flex:1; min-width:260px;">
       <h1>Bio-Inspired Pneumatic Modular Actuator for Peristaltic Transport</h1>
       <div class="meta">IEEE Robotics & Automation Letters — accepted May 2025 • Authors: Brian Ye, Zhuonan Hao, Priya Shah, Mohammad K. Jawed</div>
-      <p class="lead">A modular donut-shaped soft actuator system that uses sequential radial (compression) and axial (longitudinal) inflation to grasp and transport objects via peristaltic waves. Includes pressure-feedback synchronization and modular stacking.</p>
+      <p class="lead">A modular donut-shaped soft actuator system that uses sequential radial (compression) and axial (longitudinal) inflation to grasp and transport objects via peristaltic waves.</p>
 
       <div style="margin-top:12px;">
         <a class="btn btn-primary" href="../peristaltic.pdf" target="_blank">Open paper (PDF)</a>
         <a class="btn btn-outline-primary ms-2" href="https://ieeexplore.ieee.org/document/11034719" target="_blank" rel="noopener">View on IEEE Xplore</a>
         <a class="btn btn-outline-secondary ms-2" href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">Repo</a>
-        <a class="btn btn-outline-secondary ms-2" href="#video">Watch demo</a>
+        <a class="btn btn-outline-secondary ms-2" href="#overview">Watch Overview</a>
       </div>
     </div>
   </div>
@@ -60,13 +66,20 @@
     </ul>
   </div>
 
+  <div class="section" id="overview">
+    <h3>Project Overview</h3>
+    <p>This video demonstrates the core functionality of the peristaltic transport system, showing the coordination between modular units to move various objects.</p>
+    <iframe class="video" src="https://www.youtube.com/embed/QAWYP7bzRCQ" title="Peristaltic Actuator Overview" allowfullscreen></iframe>
+  </div>
+
   <div class="section row g-4">
     <div class="col-lg-7">
       <h3>Design & Fabrication</h3>
-      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Compression modules inflate radially to grasp; longitudinal modules inflate axially to push the object forward. Multiple chambers mitigate asymmetric inflation.</p>
+      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Compression modules inflate radially to grasp; longitudinal modules inflate axially to push the object forward.</p>
 
-      <h4 id="video">Demo video</h4>
-      <iframe class="video" src="https://www.youtube.com/embed/uWucfxMYYb0" title="Peristaltic actuator demo" allowfullscreen></iframe>
+      <h4 id="manufacturing">Manufacturing Guide</h4>
+      <p>Step-by-step documentation on the casting, assembly, and casing integration for the soft actuators.</p>
+      <iframe class="video" src="https://www.youtube.com/embed/uWucfxMYYb0" title="Peristaltic Actuator Manufacturing Guide" allowfullscreen></iframe>
     </div>
 
     <div class="col-lg-5">
@@ -88,7 +101,6 @@
   <div class="section">
     <h3>Results & notes</h3>
     <p>Module sequence affects speed; C–L–L–C increased throughput vs C–L–C in tests. Pressure thresholds reliably detect grasp/release events and allow cascade triggering across stacked levels.</p>
-
     <img src="../images/figure1_peristaltic.png" alt="Peristaltic figure 1" class="figure mt-3">
   </div>
 
@@ -98,11 +110,8 @@
       <li><a href="../peristaltic.pdf" target="_blank">Full paper (PDF)</a></li>
       <li><a href="https://ieeexplore.ieee.org/document/11034719" target="_blank" rel="noopener">IEEE Xplore — official record</a></li>
       <li><a href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">Repo & data</a></li>
-      <li><a href="https://www.youtube.com/watch?v=uWucfxMYYb0" target="_blank" rel="noopener">Tutorial / demo video</a></li>
     </ul>
   </div>
-
-  <p class="mt-4">If you want a one-page PDF summary or an image gallery, I can create downloadable assets next.</p>
 </div>
 
 <footer>
