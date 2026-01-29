@@ -6,7 +6,6 @@
   <title>Peristaltic Actuator — Brian Ye</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* 1. Exact Variables & Global Resets from index.html */
     :root {
       --bg: #ffffff;
       --text: #111;
@@ -14,38 +13,30 @@
       --tan: #f9fafb; 
     }
 
-    html, body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: var(--bg);
-      color: var(--text);
+    body { 
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      margin: 0; 
+      background: var(--bg); 
+      color: var(--text); 
     }
 
-    /* 2. NAVBAR: Strict matching to index.html to fix height and font */
+    /* NAVBAR: Strict match to index.html */
     .navbar {
       background: var(--tan) !important;
       transition: background .25s;
       border-bottom: 1px solid rgba(0,0,0,0.04);
-      padding-top: 8px !important;    /* Forces height to match index */
+      padding-top: 8px !important;    
       padding-bottom: 8px !important;
-      min-height: 56px;               /* Standard height match */
+      min-height: 56px;
     }
-    .navbar .nav-link { 
-      color: #000 !important; 
-      font-weight: 400 !important;
-    }
-    .navbar .navbar-brand { 
-      color: #000 !important; 
-      font-weight: 700 !important; /* Bold match */
-    }
+    .navbar .nav-link { color: #000 !important; font-weight: 400 !important; }
+    .navbar .navbar-brand { color: #000 !important; font-weight: 700 !important; }
 
-    /* 3. Project Page Layout */
     .container { max-width: 980px; padding: 28px 16px; }
     
     .hero { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
     .hero img { width: 320px; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
     
-    /* 16:9 Video Container Fix */
     .video-container {
       position: relative;
       width: 100%;
@@ -62,10 +53,10 @@
     }
 
     .section { margin-top: 48px; }
-    .figure { width: 100%; height: auto; border-radius: 6px; }
-    .aside { background: #f8f9fa; padding: 20px; border-radius: 12px; height: 100%; }
+    .figure-card { padding: 20px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; background: #fff; margin-bottom: 24px; }
+    .figure-img { width: 100%; height: auto; border-radius: 6px; margin-bottom: 16px; }
+    .aside { background: #f8f9fa; padding: 20px; border-radius: 12px; }
 
-    /* Footer: Strict Sync with index.html */
     .footer { 
       background: #0b0c0d; 
       color: #cbd5e1; 
@@ -86,7 +77,7 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
       </ul>
     </div>
   </div>
@@ -116,28 +107,55 @@
 
   <div class="section">
     <h3>Results & Performance</h3>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="p-3 border rounded bg-light h-100">
-          <img src="../images/figure_control.png" alt="Control of peristaltic transportation" class="figure mb-3">
-          <p class="small text-muted mb-0">
-            <strong>Control of peristaltic transportation.</strong> (a) The fundamental unit, composed of two compression modules at the top and bottom with a longitudinal module in the middle, enables object transport through sequence-based control. (b) Multi-level synchronization is achieved via pressure signal differences ∆P.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="p-3 border rounded bg-light h-100">
-          <img src="../images/figure_process.png" alt="Modular features and performance" class="figure mb-3">
-          <p class="small text-muted mb-0">
-            <strong>System Performance.</strong> (a) Multi-level synchronization in object transportation. (b) Performance comparison between module sequences: C–L–C reached 1.00 ± 0.11 mm/s and C–L–L–C reached 1.23 ± 0.06 mm/s.
-          </p>
-        </div>
-      </div>
+    
+    <div class="figure-card">
+      <img src="../images/figure_control.png" alt="Control of peristaltic transportation" class="figure-img">
+      <p class="small text-muted mb-0">
+        <strong>Control of peristaltic transportation.</strong> (a) The fundamental unit, composed of two compression modules at the top and bottom with a longitudinal module in the middle, enables object transport through sequence-based control. (b) Multi-level synchronization is achieved via pressure signal differences ∆P. [cite: 39, 44]
+      </p>
+    </div>
+
+    <div class="figure-card">
+      <img src="../images/figure_process.png" alt="Modular features and performance" class="figure-img">
+      <p class="small text-muted mb-0">
+        <strong>System Performance.</strong> (a) Multi-level synchronization in object transportation. (b) Performance comparison between module sequences: C–L–C reached 1.00 ± 0.11 mm/s and C–L–L–C reached 1.23 ± 0.06 mm/s. [cite: 55, 56]
+      </p>
     </div>
   </div>
 
   <div class="section row g-4">
     <div class="col-lg-8">
       <h3>Design & Fabrication</h3>
-      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Below is the full guide on how these modules are manufactured.</p>
+      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. [cite: 1] Below is the full guide on how these modules are manufactured.</p>
+      
       <h4 id="manufacturing" class="mt-4">Manufacturing Guide Video</h4>
+      <div class="video-container" style="padding-bottom: 50%;"> 
+        <iframe src="https://www.youtube.com/embed/uWucfxMYYb0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="aside">
+        <h5>Quick Specs</h5>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><strong>Material:</strong> Ecoflex 00-45</li>
+          <li class="mb-2"><strong>Casing:</strong> TPU (3D Printed)</li>
+          <li class="mb-2"><strong>Sensors:</strong> MPRLS Pressure</li>
+          <li><strong>Logic:</strong> Arduino Mega</li>
+        </ul>
+        <hr>
+        <h5>Resources</h5>
+        <a href="https://github.com/StructuresComp/Peristaltic_Actuator.git" class="btn btn-sm btn-dark w-100 mb-2" target="_blank">GitHub Repository</a>
+        <a href="https://ieeexplore.ieee.org/document/11034719" class="btn btn-sm btn-outline-primary w-100" target="_blank">IEEE Xplore</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  &copy; 2025 Brian Ye · <a href="../projects.html" style="color:#dbeafe; text-decoration:underline">Back to projects</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
