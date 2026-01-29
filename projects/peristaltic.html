@@ -6,7 +6,6 @@
   <title>Peristaltic Actuator — Brian Ye</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Integrated Variables from index.html */
     :root {
       --bg: #ffffff;
       --text: #111;
@@ -21,34 +20,32 @@
       color: var(--text); 
     }
 
-    /* NAVBAR: Exact Match to index.html styling */
+    /* NAVBAR FIX: Strict height and font matching */
     .navbar {
       background: var(--tan) !important;
-      transition: background .25s;
       border-bottom: 1px solid rgba(0,0,0,0.04);
-      padding-top: 0.5rem;    /* Standard Bootstrap height */
-      padding-bottom: 0.5rem;
+      padding-top: 0.5rem !important;    
+      padding-bottom: 0.5rem !important;
+      min-height: auto !important;
     }
     .navbar .nav-link { 
       color: #000 !important; 
-      font-weight: 400; /* Resetting to standard weight */
+      font-size: 1rem;
     }
     .navbar .navbar-brand { 
       color: #000 !important; 
-      font-weight: 700; /* Bold as per index */
+      font-weight: 700; 
     }
 
-    /* Layout Styles */
     .container { max-width: 1000px; padding: 28px 16px; }
     
     .hero { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
     .hero img { width: 320px; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
     
-    /* Widescreen Video Fix */
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%; 
       height: 0;
       overflow: hidden;
       border-radius: 12px;
@@ -63,7 +60,6 @@
     .section { margin-top: 48px; }
     .figure { width: 100%; height: auto; border-radius: 6px; }
     .aside { background: #f8f9fa; padding: 20px; border-radius: 12px; height: 100%; }
-
     .footer { background: #0b0c0d; color: #cbd5e1; padding: 20px 0; text-align: center; margin-top: 60px; }
   </style>
 </head>
@@ -101,7 +97,6 @@
 
   <div class="section" id="demo">
     <h3>Demo Video</h3>
-    <p class="text-muted">Core functionality and coordination of modular units.</p>
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/QAWYP7bzRCQ" allowfullscreen></iframe>
     </div>
@@ -112,17 +107,17 @@
     <div class="row g-4">
       <div class="col-md-6">
         <div class="p-3 border rounded bg-light h-100">
-          <img src="../images/figure_control.png" alt="Control of peristaltic transportation" class="figure mb-3">
+          <img src="../images/figure_control.pdf" alt="Control of peristaltic transportation" class="figure mb-3">
           <p class="small text-muted mb-0">
-            <strong>Control of peristaltic transportation.</strong> (a) The fundamental unit, composed of two compression modules at the top and bottom with a longitudinal module in the middle, enables object grasp and transport through sequence-based control of the actuation modules. (b) The multi-level station, where synchronization is achieved by acquiring pressure signal differences ∆P between the adjacent compression modules. Actuation timing is adjusted based on whether the object is grasped by the upper level modules.
+            <strong>Control of peristaltic transportation.</strong> (a) The fundamental unit, composed of two compression modules at the top and bottom with a longitudinal module in the middle, enables object grasp and transport through sequence-based control of the actuation modules. (b) The multi-level station, where synchronization is achieved by acquiring pressure signal differences ∆P between the adjacent compression modules. [cite_start]Actuation timing is adjusted based on whether the object is grasped by the upper level modules. [cite: 39, 44]
           </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="p-3 border rounded bg-light h-100">
-          <img src="../images/figure_process.png" alt="Modular features and performance" class="figure mb-3">
+          <img src="../images/figure_process.pdf" alt="Modular features and performance" class="figure mb-3">
           <p class="small text-muted mb-0">
-            <strong>Demonstration of the modular features on system variation.</strong> (a) Multi-level synchronization in object transportation. (b) Module sequence on object transportation performance during three periods, i.e., C–L–C of 1.00 ± 0.11 mm/s and C–L–L–C of 1.23 ± 0.06 mm/s.
+            <strong>Demonstration of the modular features on system variation.</strong> (a) Multi-level synchronization in object transportation. (b) [cite_start]Module sequence on object transportation performance during three periods, i.e., C–L–C of 1.00 ± 0.11 mm/s and C–L–L–C of 1.23 ± 0.06 mm/s. [cite: 52, 53, 56]
           </p>
         </div>
       </div>
