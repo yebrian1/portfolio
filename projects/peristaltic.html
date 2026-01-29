@@ -12,13 +12,13 @@
   .hero img{ width:320px; height:220px; object-fit:cover; border-radius:8px; box-shadow:0 8px 30px rgba(2,6,23,0.08); }
   .meta{ color:#6c757d; font-size:0.95rem; margin-bottom:8px;}
   h1{ margin-top:0; }
-  .section { margin-top:22px; }
+  .section { margin-top:28px; }
   .figure { width:100%; height:auto; border-radius:6px; box-shadow:0 8px 22px rgba(2,6,23,0.06); }
   .aside { background:#f8f9fa; padding:12px; border-radius:8px; }
   footer{ background:#0b0c0d; color:#cbd5e1; padding:14px 0; text-align:center; margin-top:36px; }
-  iframe.video { width:100%; height:360px; border-radius:8px; border:0; box-shadow:0 8px 24px rgba(2,6,23,0.08); }
+  iframe.video { width:100%; height:480px; border-radius:8px; border:0; box-shadow:0 8px 24px rgba(2,6,23,0.08); }
   .tech-list li{ margin-bottom:6px; }
-  
+
   /* Unified Navbar style from index */
   .navbar {
     background: #f9fafb !important;
@@ -52,9 +52,14 @@
         <a class="btn btn-primary" href="../peristaltic.pdf" target="_blank">Open paper (PDF)</a>
         <a class="btn btn-outline-primary ms-2" href="https://ieeexplore.ieee.org/document/11034719" target="_blank" rel="noopener">View on IEEE Xplore</a>
         <a class="btn btn-outline-secondary ms-2" href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">Repo</a>
-        <a class="btn btn-outline-secondary ms-2" href="#overview">Watch Overview</a>
+        <a class="btn btn-outline-secondary ms-2" href="#demo">Watch demo</a>
       </div>
     </div>
+  </div>
+
+  <div class="section" id="demo">
+    <h3>Demo Video</h3>
+    <iframe class="video" src="https://www.youtube.com/embed/QAWYP7bzRCQ" title="Peristaltic Actuator Demo Video" allowfullscreen></iframe>
   </div>
 
   <div class="section">
@@ -66,20 +71,14 @@
     </ul>
   </div>
 
-  <div class="section" id="overview">
-    <h3>Project Overview</h3>
-    <p>This video demonstrates the core functionality of the peristaltic transport system, showing the coordination between modular units to move various objects.</p>
-    <iframe class="video" src="https://www.youtube.com/embed/QAWYP7bzRCQ" title="Peristaltic Actuator Overview" allowfullscreen></iframe>
-  </div>
-
   <div class="section row g-4">
     <div class="col-lg-7">
       <h3>Design & Fabrication</h3>
-      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Compression modules inflate radially to grasp; longitudinal modules inflate axially to push the object forward.</p>
+      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Compression modules inflate radially to grasp; longitudinal modules inflate axially to push the object forward. Multiple chambers mitigate asymmetric inflation.</p>
 
-      <h4 id="manufacturing">Manufacturing Guide</h4>
-      <p>Step-by-step documentation on the casting, assembly, and casing integration for the soft actuators.</p>
-      <iframe class="video" src="https://www.youtube.com/embed/uWucfxMYYb0" title="Peristaltic Actuator Manufacturing Guide" allowfullscreen></iframe>
+      <h4 id="manufacturing" class="mt-4">Manufacturing Guide Video</h4>
+      <p class="text-muted small">A detailed walkthrough of the fabrication process, including casting and casing assembly.</p>
+      <iframe class="video" style="height:340px;" src="https://www.youtube.com/embed/uWucfxMYYb0" title="Peristaltic Actuator Manufacturing Guide" allowfullscreen></iframe>
     </div>
 
     <div class="col-lg-5">
