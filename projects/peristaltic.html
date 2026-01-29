@@ -7,23 +7,57 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   body{ font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; background:#fff; color:#111; }
-  .container{ max-width:980px; padding:28px 16px; }
-  .hero{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
-  .hero img{ width:320px; height:220px; object-fit:cover; border-radius:8px; box-shadow:0 8px 30px rgba(2,6,23,0.08); }
-  .meta{ color:#6c757d; font-size:0.95rem; margin-bottom:8px;}
-  h1{ margin-top:0; }
-  .section { margin-top:28px; }
-  .figure { width:100%; height:auto; border-radius:6px; box-shadow:0 8px 22px rgba(2,6,23,0.06); }
-  .aside { background:#f8f9fa; padding:12px; border-radius:8px; }
-  footer{ background:#0b0c0d; color:#cbd5e1; padding:14px 0; text-align:center; margin-top:36px; }
-  iframe.video { width:100%; height:480px; border-radius:8px; border:0; box-shadow:0 8px 24px rgba(2,6,23,0.08); }
-  .tech-list li{ margin-bottom:6px; }
-
+  .container{ max-width:1000px; padding:28px 16px; }
+  
   /* Unified Navbar style from index */
-  .navbar {
-    background: #f9fafb !important;
-    border-bottom: 1px solid rgba(0,0,0,0.04);
+  .navbar { background: #f9fafb !important; border-bottom: 1px solid rgba(0,0,0,0.04); }
+
+  .hero{ display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin-bottom: 40px; }
+  .hero img{ width:320px; height:220px; object-fit:cover; border-radius:8px; box-shadow:0 8px 30px rgba(2,6,23,0.08); }
+  
+  /* VIDEO RESOLUTION FIX (16:9 Aspect Ratio) */
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #000;
   }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .section { margin-top:48px; }
+  .aside { background:#f8f9fa; padding:20px; border-radius:12px; height: 100%; }
+  
+  /* SCREENSHOT GALLERY STYLE */
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    background: #0b0c0d;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+  .screenshot-grid img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.2s;
+  }
+  .screenshot-grid img:hover { transform: scale(1.05); }
+
+  footer{ background:#0b0c0d; color:#cbd5e1; padding:20px 0; text-align:center; margin-top:60px; }
 </style>
 </head>
 <body>
@@ -43,78 +77,66 @@
 <div class="container">
   <div class="hero">
     <img src="../images/figure1_peristaltic.png" alt="Peristaltic — Figure 1">
-    <div style="flex:1; min-width:260px;">
+    <div style="flex:1; min-width:300px;">
+      <div class="badge bg-primary mb-2">RAL 2025</div>
       <h1>Bio-Inspired Pneumatic Modular Actuator for Peristaltic Transport</h1>
-      <div class="meta">IEEE Robotics & Automation Letters — accepted May 2025 • Authors: Brian Ye, Zhuonan Hao, Priya Shah, Mohammad K. Jawed</div>
-      <p class="lead">A modular donut-shaped soft actuator system that uses sequential radial (compression) and axial (longitudinal) inflation to grasp and transport objects via peristaltic waves.</p>
-
-      <div style="margin-top:12px;">
-        <a class="btn btn-primary" href="../peristaltic.pdf" target="_blank">Open paper (PDF)</a>
-        <a class="btn btn-outline-primary ms-2" href="https://ieeexplore.ieee.org/document/11034719" target="_blank" rel="noopener">View on IEEE Xplore</a>
-        <a class="btn btn-outline-secondary ms-2" href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">Repo</a>
-        <a class="btn btn-outline-secondary ms-2" href="#demo">Watch demo</a>
+      <p class="text-muted mb-3">Authors: Brian Ye, Zhuonan Hao, Priya Shah, Mohammad K. Jawed</p>
+      <p class="lead">A modular donut-shaped soft actuator system that uses sequential radial and axial inflation to transport objects via peristaltic waves.</p>
+      <div class="d-flex gap-2">
+        <a class="btn btn-primary" href="../peristaltic.pdf" target="_blank">View Paper</a>
+        <a class="btn btn-outline-secondary" href="#demo">Watch Demo</a>
       </div>
     </div>
   </div>
 
   <div class="section" id="demo">
-    <h3>Demo Video</h3>
-    <iframe class="video" src="https://www.youtube.com/embed/QAWYP7bzRCQ" title="Peristaltic Actuator Demo Video" allowfullscreen></iframe>
+    <h3>Project Overview & Demo</h3>
+    <p class="text-muted">Core functionality and coordination of modular units.</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/QAWYP7bzRCQ" allowfullscreen></iframe>
+    </div>
   </div>
 
   <div class="section">
-    <h3>Highlights</h3>
-    <ul>
-      <li>Modular compression + longitudinal donut modules for radial and axial actuation.</li>
-      <li>Pressure-feedback enables synchronized, multi-level transport of irregular objects.</li>
-      <li>Demonstrated stable transport of pens, handheld level, and other shapes at ~2.08 ± 0.07 mm/s.</li>
-    </ul>
+    <h3>Visual Documentation</h3>
+    <div class="screenshot-grid">
+      <img src="../images/gallery1.png" alt="Step 1">
+      <img src="../images/gallery2.png" alt="Simulation">
+      <img src="../images/gallery3.png" alt="Lab Test">
+      <img src="../images/gallery4.png" alt="Analysis">
+    </div>
   </div>
 
   <div class="section row g-4">
-    <div class="col-lg-7">
+    <div class="col-lg-8">
       <h3>Design & Fabrication</h3>
-      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Compression modules inflate radially to grasp; longitudinal modules inflate axially to push the object forward. Multiple chambers mitigate asymmetric inflation.</p>
-
+      <p>The module uses Ecoflex rings with internal chambers and a TPU strain-limiting casing. Below is the full guide on how these modules are manufactured.</p>
+      
       <h4 id="manufacturing" class="mt-4">Manufacturing Guide Video</h4>
-      <p class="text-muted small">A detailed walkthrough of the fabrication process, including casting and casing assembly.</p>
-      <iframe class="video" style="height:340px;" src="https://www.youtube.com/embed/uWucfxMYYb0" title="Peristaltic Actuator Manufacturing Guide" allowfullscreen></iframe>
-    </div>
-
-    <div class="col-lg-5">
-      <div class="aside">
-        <h5>Quick specs</h5>
-        <ul class="tech-list">
-          <li><strong>Material:</strong> Ecoflex 00-45, TPU casing</li>
-          <li><strong>Sensors:</strong> MPRLS pressure sensors</li>
-          <li><strong>Controller:</strong> Arduino Mega with valves & pump</li>
-        </ul>
-
-        <h5 class="mt-3">Repro resources</h5>
-        <p>Paper provides links to a GitHub repo and simulation data.</p>
-        <a class="btn btn-sm btn-outline-primary" href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">GitHub repo</a>
+      <div class="video-container" style="padding-bottom: 50%;"> <iframe src="https://www.youtube.com/embed/uWucfxMYYb0" allowfullscreen></iframe>
       </div>
     </div>
-  </div>
 
-  <div class="section">
-    <h3>Results & notes</h3>
-    <p>Module sequence affects speed; C–L–L–C increased throughput vs C–L–C in tests. Pressure thresholds reliably detect grasp/release events and allow cascade triggering across stacked levels.</p>
-    <img src="../images/figure1_peristaltic.png" alt="Peristaltic figure 1" class="figure mt-3">
-  </div>
-
-  <div class="section">
-    <h3>Files & links</h3>
-    <ul>
-      <li><a href="../peristaltic.pdf" target="_blank">Full paper (PDF)</a></li>
-      <li><a href="https://ieeexplore.ieee.org/document/11034719" target="_blank" rel="noopener">IEEE Xplore — official record</a></li>
-      <li><a href="https://github.com/StructuresComp/Peristaltic_Actuator.git" target="_blank" rel="noopener">Repo & data</a></li>
-    </ul>
+    <div class="col-lg-4">
+      <div class="aside">
+        <h5>Quick Specs</h5>
+        <ul class="list-unstyled">
+          <li><strong>Material:</strong> Ecoflex 00-45</li>
+          <li><strong>Casing:</strong> TPU (3D Printed)</li>
+          <li><strong>Sensors:</strong> MPRLS Pressure</li>
+          <li><strong>Logic:</strong> Arduino Mega</li>
+        </ul>
+        <hr>
+        <h5>Resources</h5>
+        <a href="https://github.com/StructuresComp/Peristaltic_Actuator.git" class="btn btn-sm btn-dark w-100 mb-2">GitHub Repository</a>
+        <a href="https://ieeexplore.ieee.org/document/11034719" class="btn btn-sm btn-outline-primary w-100">IEEE Xplore</a>
+      </div>
+    </div>
   </div>
 </div>
 
 <footer>
-  &copy; 2025 Brian Ye · <a href="../projects.html" style="color:#dbeafe; text-decoration:underline">Back to projects</a>
+  &copy; 2025 Brian Ye · <a href="../projects.html" style="color:#fff;">Back to Projects</a>
 </footer>
 
 </body>
