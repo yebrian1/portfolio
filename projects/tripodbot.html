@@ -6,7 +6,6 @@
   <title>TripodBot (CCPJ) — Brian Ye</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Integrated Variables from index.html */
     :root {
       --bg: #ffffff;
       --text: #111;
@@ -21,30 +20,39 @@
       color: var(--text); 
     }
 
-    /* NAVBAR: Strict Sync with index.html */
+    /* NAVBAR: Strict Sync with index.html and black text fix */
     .navbar {
       background: var(--tan) !important;
       transition: background .25s;
       border-bottom: 1px solid rgba(0,0,0,0.04);
-      padding-top: 8px !important;    /* Forces height to match index */
+      padding-top: 8px !important;    
       padding-bottom: 8px !important;
-      min-height: 56px;               /* Standard height match */
+      min-height: 56px;
     }
     .navbar .nav-link { 
-      color: #000 !important; 
-      font-weight: 400 !important;
+      color: #000 !important; /* Force black text */
+      font-weight: 400 !important; 
     }
     .navbar .navbar-brand { 
-      color: #000 !important; 
-      font-weight: 700 !important; /* Bold match */
+      color: #000 !important; /* Force black text */
+      font-weight: 700 !important; 
     }
 
-    /* Project Page Specific Styles */
     .container { max-width: 980px; padding: 28px 16px; }
     
     .hero { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 40px; }
     .hero img { width: 320px; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
     
+    /* GIF Hero Style */
+    .gif-hero {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
     .section { margin-top: 48px; }
     .figure-card { padding: 20px; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; background: #fff; margin-bottom: 24px; }
     .figure-img { width: 100%; height: auto; border-radius: 6px; margin-bottom: 16px; }
@@ -83,7 +91,7 @@
       <div class="badge bg-secondary mb-2">ISRR 2024</div>
       <h1>TripodBot — Self-Deployable CCPJ Robot</h1>
       <p class="text-muted mb-3">Authors: Wenzhong Yan, Brian Ye, Mingxi Li, Jonathan B. Hopkins, Ankur Mehta</p>
-      <p class="lead">TripodBot uses Contracting-Cord Particle Jamming (CCPJ) beams to self-deploy into a tripod, tune stiffness, and perform slip-stick crawling.</p>
+      <p class="lead">TripodBot uses Contracting-Cord Particle Jamming (CCPJ) beams to self-deploy into a tripod, tune stiffness, and perform slip-stick crawling. </p>
 
       <div class="d-flex gap-2 flex-wrap">
         <a class="btn btn-primary" href="../tripodbot.pdf" target="_blank">View Paper (PDF)</a>
@@ -95,27 +103,29 @@
   <div class="section">
     <h3>Key Contributions</h3>
     <ul>
-      <li><strong>CCPJ Beams:</strong> Integrated beads and contracting cords that self-assemble and tune stiffness via jamming.</li>
-      <li><strong>Self-Deployment:</strong> Demonstrates a bounding box expansion of approximately 43×.</li>
-      <li><strong>Locomotion Performance:</strong> Achieves a speed of ~0.51 m/min and navigates gaps down to ~31% of its height.</li>
+      <li><strong>CCPJ Beams:</strong> Integrated beads and contracting cords that self-assemble and tune stiffness via jamming. [cite: 31]</li>
+      <li><strong>Self-Deployment:</strong> Demonstrates a bounding box expansion of approximately 43×. [cite: 47]</li>
+      <li><strong>Locomotion Performance:</strong> Achieves a speed of ~0.51 m/min and navigates gaps down to ~31% of its height. [cite: 47]</li>
     </ul>
   </div>
+
+  <img src="../images/tripod.GIF" alt="TripodBot Self-Deployment GIF" class="gif-hero">
 
   <div class="section row g-4">
     <div class="col-lg-8">
       <h3>Mechanism & Control</h3>
-      <p>Each CCPJ beam contains beads threaded over SMA (Shape Memory Alloy) wire with designed slack. Heating the SMA increases tension, which "jams" the particles together, increasing beam stiffness by over 50×.</p>
+      <p>Each CCPJ beam contains beads threaded over SMA (Shape Memory Alloy) wire with designed slack. [cite: 31] Heating the SMA increases tension, which "jams" the particles together, increasing beam stiffness by over 50×. [cite: 47]</p>
       
       <div class="figure-card mt-4">
         <img src="../images/figure1_tripodbot.png" alt="TripodBot Overview" class="figure-img">
-        <p class="small text-muted mb-0"><strong>Figure 1:</strong> System architecture and locomotion mechanism of the self-deployable TripodBot.</p>
+        <p class="small text-muted mb-0"><strong>Figure 1:</strong> System architecture and locomotion mechanism of the self-deployable TripodBot. [cite: 31]</p>
       </div>
 
       <h4>Experimental Highlights</h4>
       <ul>
-        <li>Navigates through confined tunnels using directional friction claws.</li>
-        <li>Load tests included supporting a 19.8 kg footstep using the SCP actuator variant.</li>
-        <li>Tunable actuation periods allow for adaptable climbing up to 15°.</li>
+        <li>Navigates through confined tunnels using directional friction claws. [cite: 47]</li>
+        <li>Load tests included supporting a 19.8 kg footstep using the SCP actuator variant. [cite: 47]</li>
+        <li>Tunable actuation periods allow for adaptable climbing up to 15°. [cite: 47]</li>
       </ul>
     </div>
 
@@ -123,10 +133,10 @@
       <div class="aside">
         <h5>Quick Specs</h5>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><strong>Beads:</strong> 3 mm Plywood</li>
-          <li class="mb-2"><strong>Actuator:</strong> 0.15 mm SMA wire / SCP</li>
-          <li class="mb-2"><strong>Stiffness:</strong> >50× Tunable</li>
-          <li><strong>Deployment:</strong> 43:1 ratio</li>
+          <li class="mb-2"><strong>Beads:</strong> 3 mm Plywood [cite: 31]</li>
+          <li class="mb-2"><strong>Actuator:</strong> 0.15 mm SMA wire / SCP [cite: 31]</li>
+          <li class="mb-2"><strong>Stiffness:</strong> >50× Tunable [cite: 47]</li>
+          <li><strong>Deployment:</strong> 43:1 ratio [cite: 47]</li>
         </ul>
         <hr>
         <h5>Research Resources</h5>
@@ -137,8 +147,11 @@
   </div>
 
   <div class="section">
-    <h3>Reproduction & Technical Notes</h3>
-    <p>Success with CCPJ mechanisms depends heavily on the initial slack designed into the beads. SMA current should be tuned to avoid overheating while ensuring full contraction for maximum jamming force. For directional locomotion, leg tips should be oriented to leverage stick-slip physics against the ground surface.</p>
+    <h3>Links</h3>
+    <ul>
+      <li><a href="../tripodbot.pdf" target="_blank">Paper (PDF)</a></li>
+      <li><a href="https://www.researchgate.net/publication/384680455_Self-Deployable_Adaptive_Soft_Robots_Based_on_Contracting-Cord_Particle_Jamming" target="_blank" rel="noopener">ResearchGate — publication</a></li>
+    </ul>
   </div>
 </div>
 
